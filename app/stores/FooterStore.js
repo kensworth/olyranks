@@ -8,6 +8,8 @@ class FooterStore {
     this.characters = [];
   }
 
+  //Alt's bindactions autobinds actions to handlers defined in the store.
+  //here it matches the 'on' keyword
   onGetTopCharactersSuccess(data) {
     this.characters = data.slice(0, 5);
   }
