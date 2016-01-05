@@ -2,26 +2,45 @@
 1 verbose cli [ 'node',
 1 verbose cli   '/Users/kennethzhang/.nvm/v0.10.32/bin/npm',
 1 verbose cli   'run',
-1 verbose cli   'watcj' ]
+1 verbose cli   'start' ]
 2 info using npm@3.5.2
 3 info using node@v0.10.32
-4 verbose stack Error: missing script: watcj
-4 verbose stack     at run (/Users/kennethzhang/.nvm/v0.10.32/lib/node_modules/npm/lib/run-script.js:147:19)
-4 verbose stack     at /Users/kennethzhang/.nvm/v0.10.32/lib/node_modules/npm/lib/run-script.js:57:5
-4 verbose stack     at /Users/kennethzhang/.nvm/v0.10.32/lib/node_modules/npm/node_modules/read-package-json/read-json.js:345:5
-4 verbose stack     at checkBinReferences_ (/Users/kennethzhang/.nvm/v0.10.32/lib/node_modules/npm/node_modules/read-package-json/read-json.js:309:45)
-4 verbose stack     at final (/Users/kennethzhang/.nvm/v0.10.32/lib/node_modules/npm/node_modules/read-package-json/read-json.js:343:3)
-4 verbose stack     at then (/Users/kennethzhang/.nvm/v0.10.32/lib/node_modules/npm/node_modules/read-package-json/read-json.js:113:5)
-4 verbose stack     at /Users/kennethzhang/.nvm/v0.10.32/lib/node_modules/npm/node_modules/read-package-json/read-json.js:300:12
-4 verbose stack     at /Users/kennethzhang/.nvm/v0.10.32/lib/node_modules/npm/node_modules/graceful-fs/graceful-fs.js:76:16
-4 verbose stack     at fs.js:271:14
-4 verbose stack     at /Users/kennethzhang/.nvm/v0.10.32/lib/node_modules/npm/node_modules/graceful-fs/graceful-fs.js:42:10
-5 verbose cwd /Users/kennethzhang/Dropbox/Code/Sites/olyranks
-6 error Darwin 15.0.0
-7 error argv "node" "/Users/kennethzhang/.nvm/v0.10.32/bin/npm" "run" "watcj"
-8 error node v0.10.32
-9 error npm  v3.5.2
-10 error missing script: watcj
-11 error If you need help, you may report this error at:
-11 error     <https://github.com/npm/npm/issues>
-12 verbose exit [ 1, true ]
+4 verbose run-script [ 'prestart', 'start', 'poststart' ]
+5 info lifecycle newedenfaces@1.0.0~prestart: newedenfaces@1.0.0
+6 silly lifecycle newedenfaces@1.0.0~prestart: no script for prestart, continuing
+7 info lifecycle newedenfaces@1.0.0~start: newedenfaces@1.0.0
+8 verbose lifecycle newedenfaces@1.0.0~start: unsafe-perm in lifecycle true
+9 verbose lifecycle newedenfaces@1.0.0~start: PATH: /Users/kennethzhang/.nvm/v0.10.32/lib/node_modules/npm/bin/node-gyp-bin:/Users/kennethzhang/Dropbox/Code/Outside/nef/node_modules/.bin:/Library/Frameworks/Python.framework/Versions/3.4/bin:/Library/Frameworks/Python.framework/Versions/3.4/bin:/Users/kennethzhang/.nvm/v0.10.32/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/git/bin:/Applications/MAMP/Library/bin
+10 verbose lifecycle newedenfaces@1.0.0~start: CWD: /Users/kennethzhang/Dropbox/Code/Outside/nef
+11 silly lifecycle newedenfaces@1.0.0~start: Args: [ '-c', 'node server.js' ]
+12 silly lifecycle newedenfaces@1.0.0~start: Returned: code: 8  signal: null
+13 info lifecycle newedenfaces@1.0.0~start: Failed to exec start script
+14 verbose stack Error: newedenfaces@1.0.0 start: `node server.js`
+14 verbose stack Exit status 8
+14 verbose stack     at EventEmitter.<anonymous> (/Users/kennethzhang/.nvm/v0.10.32/lib/node_modules/npm/lib/utils/lifecycle.js:232:16)
+14 verbose stack     at EventEmitter.emit (events.js:98:17)
+14 verbose stack     at ChildProcess.<anonymous> (/Users/kennethzhang/.nvm/v0.10.32/lib/node_modules/npm/lib/utils/spawn.js:24:14)
+14 verbose stack     at ChildProcess.emit (events.js:98:17)
+14 verbose stack     at maybeClose (child_process.js:756:16)
+14 verbose stack     at Process.ChildProcess._handle.onexit (child_process.js:823:5)
+15 verbose pkgid newedenfaces@1.0.0
+16 verbose cwd /Users/kennethzhang/Dropbox/Code/Outside/nef
+17 error Darwin 15.0.0
+18 error argv "node" "/Users/kennethzhang/.nvm/v0.10.32/bin/npm" "run" "start"
+19 error node v0.10.32
+20 error npm  v3.5.2
+21 error code ELIFECYCLE
+22 error newedenfaces@1.0.0 start: `node server.js`
+22 error Exit status 8
+23 error Failed at the newedenfaces@1.0.0 start script 'node server.js'.
+23 error Make sure you have the latest version of node.js and npm installed.
+23 error If you do, this is most likely a problem with the newedenfaces package,
+23 error not with npm itself.
+23 error Tell the author that this fails on your system:
+23 error     node server.js
+23 error You can get information on how to open an issue for this project with:
+23 error     npm bugs newedenfaces
+23 error Or if that isn't available, you can get their info via:
+23 error     npm owner ls newedenfaces
+23 error There is likely additional logging output above.
+24 verbose exit [ 1, true ]
