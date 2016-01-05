@@ -1088,7 +1088,9 @@ var Footer = (function (_React$Component) {
               _react2.default.createElement(
                 'p',
                 null,
-                '© 2015 Kenneth Zhang. Inspired by Sahat Yalkabov.'
+                '© 2015 Kenneth Zhang. ',
+                _react2.default.createElement('br', null),
+                'Inspired by Sahat Yalkabov.'
               )
             ),
             _react2.default.createElement(
