@@ -1479,7 +1479,7 @@ var Navbar = (function (_React$Component) {
                   _react2.default.createElement(
                     _reactRouter.Link,
                     { to: '/top/caldari' },
-                    'Caldari'
+                    'China'
                   ),
                   _react2.default.createElement(
                     'ul',
@@ -1519,7 +1519,7 @@ var Navbar = (function (_React$Component) {
                   _react2.default.createElement(
                     _reactRouter.Link,
                     { to: '/top/gallente' },
-                    'Gallente'
+                    'Russia'
                   ),
                   _react2.default.createElement(
                     'ul',
@@ -1559,7 +1559,7 @@ var Navbar = (function (_React$Component) {
                   _react2.default.createElement(
                     _reactRouter.Link,
                     { to: '/top/minmatar' },
-                    'Minmatar'
+                    'Kazakhstan'
                   ),
                   _react2.default.createElement(
                     'ul',
@@ -1599,7 +1599,7 @@ var Navbar = (function (_React$Component) {
                   _react2.default.createElement(
                     _reactRouter.Link,
                     { to: '/top/amarr' },
-                    'Amarr'
+                    'USA'
                   ),
                   _react2.default.createElement(
                     'ul',

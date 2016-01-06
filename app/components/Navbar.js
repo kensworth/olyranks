@@ -96,7 +96,7 @@ class Navbar extends React.Component {
               <ul className='dropdown-menu'>
                 <li><Link to='/top'>Top Overall</Link></li>
                 <li className='dropdown-submenu'>
-                  <Link to='/top/caldari'>Caldari</Link>
+                  <Link to='/top/caldari'>China</Link>
                   <ul className='dropdown-menu'>
                     <li><Link to='/top/caldari/achura'>Achura</Link></li>
                     <li><Link to='/top/caldari/civire'>Civire</Link></li>
@@ -104,7 +104,7 @@ class Navbar extends React.Component {
                   </ul>
                 </li>
                 <li className='dropdown-submenu'>
-                  <Link to='/top/gallente'>Gallente</Link>
+                  <Link to='/top/gallente'>Russia</Link>
                   <ul className='dropdown-menu'>
                     <li><Link to='/top/gallente/gallente'>Gallente</Link></li>
                     <li><Link to='/top/gallente/intaki'>Intaki</Link></li>
@@ -112,7 +112,7 @@ class Navbar extends React.Component {
                   </ul>
                 </li>
                 <li className='dropdown-submenu'>
-                  <Link to='/top/minmatar'>Minmatar</Link>
+                  <Link to='/top/minmatar'>Kazakhstan</Link>
                   <ul className='dropdown-menu'>
                     <li><Link to='/top/minmatar/brutor'>Brutor</Link></li>
                     <li><Link to='/top/minmatar/sebiestor'>Sebiestor</Link></li>
@@ -120,7 +120,7 @@ class Navbar extends React.Component {
                   </ul>
                 </li>
                 <li className='dropdown-submenu'>
-                  <Link to='/top/amarr'>Amarr</Link>
+                  <Link to='/top/amarr'>USA</Link>
                   <ul className='dropdown-menu'>
                     <li><Link to='/top/amarr/amarr'>Amarr</Link></li>
                     <li><Link to='/top/amarr/ni-kunni'>Ni-Kunni</Link></li>

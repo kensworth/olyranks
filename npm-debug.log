@@ -10,8 +10,8 @@
 6 silly lifecycle newedenfaces@1.0.0~prestart: no script for prestart, continuing
 7 info lifecycle newedenfaces@1.0.0~start: newedenfaces@1.0.0
 8 verbose lifecycle newedenfaces@1.0.0~start: unsafe-perm in lifecycle true
-9 verbose lifecycle newedenfaces@1.0.0~start: PATH: /Users/kennethzhang/.nvm/v0.10.32/lib/node_modules/npm/bin/node-gyp-bin:/Users/kennethzhang/Dropbox/Code/Outside/nef/node_modules/.bin:/Library/Frameworks/Python.framework/Versions/3.4/bin:/Library/Frameworks/Python.framework/Versions/3.4/bin:/Users/kennethzhang/.nvm/v0.10.32/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/git/bin:/Applications/MAMP/Library/bin
-10 verbose lifecycle newedenfaces@1.0.0~start: CWD: /Users/kennethzhang/Dropbox/Code/Outside/nef
+9 verbose lifecycle newedenfaces@1.0.0~start: PATH: /Users/kennethzhang/.nvm/v0.10.32/lib/node_modules/npm/bin/node-gyp-bin:/Users/kennethzhang/Dropbox/Code/Sites/olyranks/node_modules/.bin:/Library/Frameworks/Python.framework/Versions/3.4/bin:/Library/Frameworks/Python.framework/Versions/3.4/bin:/Users/kennethzhang/.nvm/v0.10.32/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/git/bin:/Applications/MAMP/Library/bin
+10 verbose lifecycle newedenfaces@1.0.0~start: CWD: /Users/kennethzhang/Dropbox/Code/Sites/olyranks
 11 silly lifecycle newedenfaces@1.0.0~start: Args: [ '-c', 'node server.js' ]
 12 silly lifecycle newedenfaces@1.0.0~start: Returned: code: 8  signal: null
 13 info lifecycle newedenfaces@1.0.0~start: Failed to exec start script
@@ -24,7 +24,7 @@
 14 verbose stack     at maybeClose (child_process.js:756:16)
 14 verbose stack     at Process.ChildProcess._handle.onexit (child_process.js:823:5)
 15 verbose pkgid newedenfaces@1.0.0
-16 verbose cwd /Users/kennethzhang/Dropbox/Code/Outside/nef
+16 verbose cwd /Users/kennethzhang/Dropbox/Code/Sites/olyranks
 17 error Darwin 15.0.0
 18 error argv "node" "/Users/kennethzhang/.nvm/v0.10.32/bin/npm" "run" "start"
 19 error node v0.10.32
