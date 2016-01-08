@@ -1,5 +1,6 @@
 npm run start (defined in package.json) runs server.js using node.js
 server.js is an express.js server which handles all requests to the site
+express runs as the webserver itself, loads whole app in memory, and waits for http requests to respond to, never touches file system again
 gulp transpiles react code on save, and nodemon restarts the server after each change
 mongodb is the bson database that holds all profiles
 the app uses flux architecture, meaning view->action->dispatcher->store->view one way flow
