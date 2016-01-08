@@ -1,6 +1,21 @@
 npm run start (defined in package.json) runs server.js using node.js
 server.js is an express.js server which handles all requests to the site
 express runs as the webserver itself, loads whole app in memory, and waits for http requests to respond to, never touches file system again
+res.send sends html if in single quotes, txt if http codes (numbers), json if json, all from the server to client
+res.render sends html, and renders any placeholders using json values defined in the request
+req.query can access all sent parameters, both get and post
+req.params can access route parameters.
+	ex: http://www.google.com/hi/there?qs1=you&qs2=tube
+	req.query
+	{
+ 		qs1: 'you',
+ 		qs2: 'tube'
+	}
+	req.params
+	{
+		param1: 'there'
+	}
+must have a response, otherwise request timeout, no data received
 gulp transpiles react code on save, and nodemon restarts the server after each change
 mongodb is the bson database that holds all profiles
 the app uses flux architecture, meaning view->action->dispatcher->store->view one way flow
