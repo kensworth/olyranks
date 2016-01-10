@@ -13,7 +13,10 @@
     "postinstall": "bower install && gulp build"
   },
   "babel": {
-    "presets": ["es2015", "react"]
+    "presets": [
+      "es2015",
+      "react"
+    ]
   },
   "dependencies": {
     "alt": "^0.17.8",
@@ -44,6 +47,9 @@
     "babelify": "^7.2.0",
     "bower": "^1.6.5",
     "browserify": "^12.0.1",
+    "eslint-config-airbnb": "^3.1.0",
+    "eslint-config-google": "^0.3.0",
+    "eslint-plugin-react": "^3.14.0",
     "gulp": "^3.9.0",
     "gulp-autoprefixer": "^3.1.0",
     "gulp-concat": "^2.6.0",
