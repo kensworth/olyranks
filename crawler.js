@@ -7,12 +7,22 @@ var c = new Crawler({
     callback : function (error, result, $) {
         // $ is Cheerio by default
         //a lean implementation of core jQuery designed specifically for the server
-        $('a').each(function(index, a) {
-            var toQueueUrl = $(a).attr('href');
-            c.queue(toQueueUrl);
-        });
+        
+
+        if(result) {
+            var page = result.body;
+            //console.log(page);
+            console.log($('.nazwa_pogrubiona').text());
+        }
     }
 });
 
-// Queue just one URL, with default callback
-c.queue('http://www.iwrp.net/?view=contestant&id_zawodnik=1');
+var search = function(search) {
+  return 'http://www.iwrp.net/?view=contestant&id_zawodnik=' + search;
+};
+
+for(i = 1; i < 34000; i++) {
+    c.queue({
+        uri: search(i)
+    });
+}
