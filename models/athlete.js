@@ -1,0 +1,18 @@
+var mongoose = require('mongoose');
+
+var atheSchema = new mongoose.Schema({
+  lifterId: { type: String, unique: true, index: true },
+  name: String,
+  race: String,
+  //nationality: String,
+  gender: String,
+  //age: Number,
+  bloodline: String,
+  wins: { type: Number, default: 0 },
+  losses: { type: Number, default: 0 },
+  reports: { type: Number, default: 0 },
+  random: { type: [Number], index: '2d' },
+  voted: { type: Boolean, default: false }
+});
+
+module.exports = mongoose.model('Character', characterSchema);

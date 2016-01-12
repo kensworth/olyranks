@@ -22,4 +22,6 @@ the app uses flux architecture, meaning view->action->dispatcher->store->view on
 
 Mongoose model for character defines a schema and creates a Character object with methods defined in Mongoose
 
-Webcrawler needed to scrape the site http://www.iwrp.net/ for information on registered lifters. Looking into using node.js to create a spider.
+Webcrawler needed to scrape the site http://www.iwrp.net/ for information on registered lifters. Using node crawler to crawl IWRP pages.
+
+Setting up test server for weightlifters only, connecting to crawler data. node athleteServer.js should run the script.
