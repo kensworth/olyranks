@@ -87,11 +87,11 @@ app.put('/api/characters', function(req, res, next) {
   var loser = req.body.loser;
 
   if (!winner || !loser) {
-    return res.status(400).send({ message: 'Voting requires two characters.' });
+    return res.status(400).send({ message: 'Voting requires two lifters.' });
   }
 
   if (winner === loser) {
-    return res.status(400).send({ message: 'Cannot vote for and against the same character.' });
+    return res.status(400).send({ message: 'Cannot vote for and against the same lifer.' });
   }
 
   async.parallel([
@@ -113,7 +113,7 @@ app.put('/api/characters', function(req, res, next) {
       var loser = results[1];
 
       if (!winner || !loser) {
-        return res.status(404).send({ message: 'One of the characters no longer exists.' });
+        return res.status(404).send({ message: 'One of the lifters no longer exists in the database.' });
       }
 
       if (winner.voted || loser.voted) {
@@ -228,7 +228,7 @@ app.get('/api/characters/:id', function(req, res, next) {
     if (err) return next(err);
 
     if (!character) {
-      return res.status(404).send({ message: 'Character not found.' });
+      return res.status(404).send({ message: 'Lifter not found.' });
     }
 
     res.send(character);
@@ -296,7 +296,7 @@ app.post('/api/characters', function(req, res, next) {
               res.send({ message: characterName + ' has been added successfully!' });
             });
           } catch (e) {
-            res.status(404).send({ message: characterName + ' is not a registered citizen of New Eden.' });
+            res.status(404).send({ message: characterName + ' is not a registered lifter.' });
           }
         });
       });
@@ -419,14 +419,14 @@ app.post('/api/report', function(req, res, next) {
     if (err) return next(err);
 
     if (!character) {
-      return res.status(404).send({ message: 'Character not found.' });
+      return res.status(404).send({ message: 'Lifter not found.' });
     }
 
     character.reports++;
 
     if (character.reports > 4) {
       character.remove();
-      return res.send({ message: character.name + ' has been deleted.' });
+      return res.send({ message: character.name + ' has been deleted from the database.' });
     }
 
     character.save(function(err) {
