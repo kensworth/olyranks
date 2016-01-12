@@ -11,7 +11,7 @@ var c = new Crawler({
 
         if(result) {
             var page = result.body;
-            //console.log(page);
+            //polish for bold name. cool.
             console.log($('.nazwa_pogrubiona').text());
         }
     }
@@ -21,6 +21,7 @@ var search = function(search) {
   return 'http://www.iwrp.net/?view=contestant&id_zawodnik=' + search;
 };
 
+//34000 is around the current number of weightlifters in the database. Hardcoded to bypass hacky DOM method to check whether the end of the database has been reached (currently triggers MySQL error at too high a number)
 for(i = 1; i < 34000; i++) {
     c.queue({
         uri: search(i)
