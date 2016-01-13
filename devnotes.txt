@@ -20,6 +20,8 @@ gulp transpiles react code on save, and nodemon restarts the server after each c
 mongodb is the bson database that holds all profiles
 the app uses flux architecture, meaning view->action->dispatcher->store->view one way flow
 
+Alt instantiates flux dispatcher and provides methods for creating Alt actions and stores.
+
 Mongoose model for character defines a schema and creates a Character object with methods defined in Mongoose
 
 Webcrawler needed to scrape the site http://www.iwrp.net/ for information on registered lifters. Using node crawler to crawl IWRP pages.
