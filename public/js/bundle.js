@@ -470,7 +470,7 @@ var AddCharacter = function (_React$Component) {
               _react2.default.createElement(
                 'div',
                 { className: 'panel-heading' },
-                'Add Character'
+                'Add Athlete'
               ),
               _react2.default.createElement(
                 'div',
@@ -484,7 +484,7 @@ var AddCharacter = function (_React$Component) {
                     _react2.default.createElement(
                       'label',
                       { className: 'control-label' },
-                      'Character Name'
+                      'Athlete Name'
                     ),
                     _react2.default.createElement('input', { type: 'text', className: 'form-control', ref: 'nameTextField', value: this.state.name,
                       onChange: _AddCharacterActions2.default.updateName, autoFocus: true }),
@@ -1402,7 +1402,7 @@ var Navbar = function (_React$Component) {
               _react2.default.createElement('div', { className: 'tri' }),
               _react2.default.createElement('div', { className: 'tri invert' })
             ),
-            'NEF',
+            'OlyRanks',
             _react2.default.createElement(
               'span',
               { className: 'badge badge-up badge-danger' },
