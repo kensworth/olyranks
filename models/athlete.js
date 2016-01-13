@@ -1,13 +1,11 @@
 var mongoose = require('mongoose');
 
-var atheSchema = new mongoose.Schema({
-  lifterId: { type: String, unique: true, index: true },
+var athleteSchema = new mongoose.Schema({
+  athleteId: { type: String, unique: true, index: true },
   name: String,
-  race: String,
-  //nationality: String,
+  nationality: String,
   gender: String,
-  //age: Number,
-  bloodline: String,
+  age: Number,
   wins: { type: Number, default: 0 },
   losses: { type: Number, default: 0 },
   reports: { type: Number, default: 0 },
@@ -15,4 +13,4 @@ var atheSchema = new mongoose.Schema({
   voted: { type: Boolean, default: false }
 });
 
-module.exports = mongoose.model('Character', characterSchema);
+module.exports = mongoose.model('Athlete', athleteSchema);

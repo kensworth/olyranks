@@ -14,4 +14,4 @@ var athleteSchema = new mongoose.Schema({
   voted: { type: Boolean, default: false }
 });
 
-module.exports = mongoose.model('Athlete', characterSchema);
+module.exports = mongoose.model('Athlete', athleteSchema);
