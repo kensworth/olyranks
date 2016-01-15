@@ -22,7 +22,9 @@ the app uses flux architecture, meaning view->action->dispatcher->store->view on
 
 Alt instantiates flux dispatcher and provides methods for creating Alt actions and stores.
 
-Actions are generated in Actions with this.generateActions, which when exported, can be bound with this.bindActions in the receiving Store. All actions are handled with a prototype method with the same name prepended with 'on'.
+Actions are generated in Actions with this.generateActions, which when exported, can be bound with this.bindActions in the receiving Store. All actions are handled with a prototype method with the same name prepended with 'on'.	
+
+Actions who have a onCamelCasedAction method or an actionName method available in the store will be bound. For example, locationActions.updateCity will be handled by onUpdateCity. There is no difference between calling the action handler updateCity or onUpdateCity it's just a matter of aesthetic preference.
 
 Mongoose model for character defines a schema and creates a Character object with methods defined in Mongoose
 
