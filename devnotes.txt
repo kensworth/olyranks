@@ -1,35 +1,51 @@
-npm run start (defined in package.json) runs server.js using node.js
-server.js is an express.js server which handles all requests to the site
-express runs as the webserver itself, loads whole app in memory, and waits for http requests to respond to, never touches file system again
-res.send sends html if in single quotes, txt if http codes (numbers), json if json, all from the server to client
-res.render sends html files, and renders any placeholders using json values defined in the request
-req.query can access all sent parameters, both get and post
-req.params can access route parameters.
-	ex: http://www.google.com/hi/there?qs1=you&qs2=tube
-	req.query
-	{
- 		qs1: 'you',
- 		qs2: 'tube'
-	}
-	req.params
-	{
-		param1: 'there'
-	}
-must have a response, otherwise request timeout, no data received
-gulp transpiles react code on save, and nodemon restarts the server after each change
-mongodb is the bson database that holds all profiles
-the app uses flux architecture, meaning view->action->dispatcher->store->view one way flow
+Server:
 
-Alt instantiates flux dispatcher and provides methods for creating Alt actions and stores.
+	npm run start (defined in package.json) runs server.js using node.js
+	server.js is an express.js server which handles all requests to the site
+	express runs as the webserver itself, loads whole app in memory, and waits for http requests to respond to, never touches file system again
+	res.send sends html if in single quotes, txt if http codes (numbers), json if json, all from the server to client
+	res.render sends html files, and renders any placeholders using json values defined in the request
+	req.query can access all sent parameters, both get and post
+	req.params can access route parameters.
+		ex: http://www.google.com/hi/there?qs1=you&qs2=tube
+		req.query
+		{
+	 		qs1: 'you',
+	 		qs2: 'tube'
+		}
+		req.params
+		{
+			param1: 'there'
+		}
+	must have a response, otherwise request timeout, no data received
 
-Actions are generated in Actions with this.generateActions, which when exported, can be bound with this.bindActions in the receiving Store. All actions are handled with a prototype method with the same name prepended with 'on'.	
+	Setting up test server for weightlifters only, connecting to crawler data. node athleteServer.js should run the script.
 
-Actions who have a onCamelCasedAction method or an actionName method available in the store will be bound. For example, locationActions.updateCity will be handled by onUpdateCity. There is no difference between calling the action handler updateCity or onUpdateCity it's just a matter of aesthetic preference.
+	In order to match pictures with each athlete, either binary search the website of athletes, or retrieve from mongodb. Latter option is better.
 
-Mongoose model for character defines a schema and creates a Character object with methods defined in Mongoose
+Transpiler: 
 
-Webcrawler needed to scrape the site http://www.iwrp.net/ for information on registered lifters. Using node crawler to crawl IWRP pages.
+	gulp transpiles react code on save, and nodemon restarts the server after each change
 
-Setting up test server for weightlifters only, connecting to crawler data. node athleteServer.js should run the script.
+Flux:
 
-In order to match pictures with each athlete, either binary search the website of athletes, or retrieve from mongodb. Latter option is better.
+	the app uses flux architecture, meaning view->action->dispatcher->store->view one way flow
+
+	Alt instantiates flux dispatcher and provides methods for creating Alt actions and stores.
+
+	Actions are generated in Actions with this.generateActions, which when exported, can be bound with this.bindActions in the receiving Store. All actions are handled with a prototype method with the same name prepended with 'on'.	
+
+	Actions who have a onCamelCasedAction method or an actionName method available in the store will be bound. For example, locationActions.updateCity will be handled by onUpdateCity. There is no difference between calling the action handler updateCity or onUpdateCity it's just a matter of aesthetic preference.
+
+	The view references actions in both the handleSubmit method and in the render.
+
+Database:
+
+	MongoDB is the bson database that holds all profiles
+
+	Mongoose model for character defines a schema and creates a Character object with methods defined in Mongoose
+
+Webcrawler:
+
+	Webcrawler needed to scrape the site http://www.iwrp.net/ for information on registered lifters. Using node crawler to crawl IWRP pages.
+
