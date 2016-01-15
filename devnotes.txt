@@ -22,6 +22,8 @@ the app uses flux architecture, meaning view->action->dispatcher->store->view on
 
 Alt instantiates flux dispatcher and provides methods for creating Alt actions and stores.
 
+Actions are generated in Actions with this.generateActions, which when exported, can be bound with this.bindActions in the receiving Store
+
 Mongoose model for character defines a schema and creates a Character object with methods defined in Mongoose
 
 Webcrawler needed to scrape the site http://www.iwrp.net/ for information on registered lifters. Using node crawler to crawl IWRP pages.
