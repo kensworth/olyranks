@@ -21,6 +21,7 @@ var swig  = require('swig');
 var xml2js = require('xml2js');
 var _ = require('underscore');
 var util = require('util');
+var cheerio = require('cheerio');
 
 var config = require('./config');
 var routes = require('./app/routes');
@@ -46,12 +47,11 @@ app.post('/api/characters', function(req, res, next) {
   var athleteName = req.body.name;
   var athleteIdLookupUrl = 'http://www.iwrp.net/?view=contestant&id_zawodnik=' + athleteName;
 
-  var parser = new xml2js.Parser();
-
-  request.get(athleteIdLookupUrl, function(err, request, xml) {
+  request.get(athleteIdLookupUrl, function(err, request, html) {
     if (err) return next(err);
-      
-      console.log(xml);
+    
+    console.log(html);  
+    var $ = cheerio.load(html);
 
   });     
 });
