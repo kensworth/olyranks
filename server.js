@@ -251,6 +251,11 @@ app.post('/api/characters', function(req, res, next) {
       request.get(characterIdLookupUrl, function(err, request, xml) {
         if (err) return next(err);
         parser.parseString(xml, function(err, parsedXml) {
+          
+          console.log(xml);
+          console.log('-------');          
+          console.log(parsedXml);
+
           if (err) return next(err);
           try {
             var characterId = parsedXml.eveapi.result[0].rowset[0].row[0].$.characterID;
