@@ -251,11 +251,7 @@ app.post('/api/characters', function(req, res, next) {
     function(callback) {
       request.get(characterIdLookupUrl, function(err, request, xml) {
         if (err) return next(err);
-        parser.parseString(xml, function(err, parsedXml) {
-          
-          console.log(xml);
-          console.log('-------');
-          console.log(util.inspect(parsedXml, false, null));          
+        parser.parseString(xml, function(err, parsedXml) {         
 
           if (err) return next(err);
           try {
