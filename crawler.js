@@ -25,7 +25,7 @@ var cheerio = require('cheerio');
 
 var config = require('./config');
 var routes = require('./app/routes');
-var Character = require('./models/athlete');
+var Athlete = require('./models/athlete');
 
 var app = express();
 
@@ -44,14 +44,36 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.post('/api/characters', function(req, res, next) {
   var gender = req.body.gender;
-  var athleteName = req.body.name;
-  var athleteIdLookupUrl = 'http://www.iwrp.net/?view=contestant&id_zawodnik=' + athleteName;
+  var number = req.body.name;
+  var athleteIdLookupUrl = 'http://www.iwrp.net/?view=contestant&id_zawodnik=' + number;
 
   request.get(athleteIdLookupUrl, function(err, request, html) {
     if (err) return next(err);
     
-    console.log(html);  
     var $ = cheerio.load(html);
+    var name = $('.nazwa_pogrubiona').text();
+    /*var gender = 
+    var nationality =
+    var federation = 
+    var club = 
+    var birthdate = 
+    var age = */
+
+    var athlete = new Athlete({
+      name: String,
+      gender: String,
+      nationality: String,
+      federation: String,
+      club: String,
+      birthdate: Number,
+      age: Number,
+      random: [Math.random(), 0]
+    });
+
+    athlete.save(function(err) {
+      if (err) return next(err);
+      res.send({ message: name + ' has been added successfully!' });
+    });
 
   });     
 });
