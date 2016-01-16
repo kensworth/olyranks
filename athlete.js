@@ -3,10 +3,14 @@ var mongoose = require('mongoose');
 var athleteSchema = new mongoose.Schema({
   lifterId: { type: String, unique: true, index: true },
   name: String,
-  nationality: String,
   gender: String,
+  nationality: String,
+  federation: String,
+  club: String,
+  birthdate: Number,
   age: Number,
-  //best lifts, competitions?
+  //html for competitions
+  //html for best lifts
   wins: { type: Number, default: 0 },
   losses: { type: Number, default: 0 },
   reports: { type: Number, default: 0 },

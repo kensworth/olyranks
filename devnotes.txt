@@ -45,7 +45,10 @@ Database:
 
 	Mongoose model for character defines a schema and creates a Character object with methods defined in Mongoose
 
+	Import chonologically using GET from IWRP, when adding, check database for duplicates, don't bother to check IWRF.
+
 Webcrawler:
 
 	Webcrawler needed to scrape the site http://www.iwrp.net/ for information on registered lifters. Using node crawler to crawl IWRP pages.
+
 
