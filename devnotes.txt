@@ -19,6 +19,8 @@ Server:
 		}
 	must have a response, otherwise request timeout, no data received
 
+	on post on /add, server.js defines character lookup url and using request.get retrieves the xml from the API, parses it using xml2jsparser, then runs its tests
+
 	Setting up test server for weightlifters only, connecting to crawler data. node athleteServer.js should run the script.
 
 	In order to match pictures with each athlete, either binary search the website of athletes, or retrieve from mongodb. Latter option is better.

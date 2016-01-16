@@ -17,6 +17,7 @@ var Router = require('react-router');
 var swig  = require('swig');
 var xml2js = require('xml2js');
 var _ = require('underscore');
+var util = require('util');
 
 var config = require('./config');
 var routes = require('./app/routes');
@@ -253,8 +254,8 @@ app.post('/api/characters', function(req, res, next) {
         parser.parseString(xml, function(err, parsedXml) {
           
           console.log(xml);
-          console.log('-------');          
-          console.log(parsedXml);
+          console.log('-------');
+          console.log(util.inspect(parsedXml, false, null));          
 
           if (err) return next(err);
           try {
