@@ -52,5 +52,3 @@ Database:
 Webcrawler:
 
 	Webcrawler needed to scrape the site http://www.iwrp.net/ for information on registered lifters. Using node crawler to crawl IWRP pages.
-
-

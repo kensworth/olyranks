@@ -17,10 +17,11 @@ var Router = require('react-router');
 var swig  = require('swig');
 var xml2js = require('xml2js');
 var _ = require('underscore');
+var util = require('util');
 
 var config = require('./config');
 var routes = require('./app/routes');
-var Athlete = require('./models/athlete');
+var Character = require('./models/character');
 
 var app = express();
 
@@ -38,33 +39,49 @@ app.use(favicon(path.join(__dirname, 'public', 'favicon.png')));
 app.use(express.static(path.join(__dirname, 'public')));
 
 /**
- * POST /api/athletes
- * Adds new athlete to the database.
+ * POST /api/characters
+ * Adds new character to the database.
  */
-app.post('/api/athletes', function(req, res, next) {
+app.post('/api/characters', function(req, res, next) {
   var gender = req.body.gender;
   var athleteName = req.body.name;
   var athleteIdLookupUrl = 'http://www.iwrp.net/?view=contestant&id_zawodnik=' + athleteName;
 
   var parser = new xml2js.Parser();
 
-  async.waterfall([
+  request.get(athleteIdLookupUrl, function(err, request, xml) {
+    if (err) return next(err);
+    parser.parseString(xml, function(err, parsedXml) {
+      
+      console.log(xml);
+      console.log('-------');
+      console.log(util.inspect(parsedXml, false, null));
+
+    });
+  });     
+
+  /*async.waterfall([
     function(callback) {
-      request.get(athleteIdLookupUrl, function(err, request, xml) {
+      request.get(characterIdLookupUrl, function(err, request, xml) {
         if (err) return next(err);
         parser.parseString(xml, function(err, parsedXml) {
+          
+          console.log(xml);
+          console.log('-------');
+          console.log(util.inspect(parsedXml, false, null));          
+
           if (err) return next(err);
           try {
-            var athleteId = parsedXml.eveapi.result[0].rowset[0].row[0].$.athleteID;
+            var characterId = parsedXml.eveapi.result[0].rowset[0].row[0].$.characterID;
 
-            Athlete.findOne({ athleteId: athleteId }, function(err, athlete) {
+            Character.findOne({ characterId: characterId }, function(err, character) {
               if (err) return next(err);
 
-              if (athlete) {
-                return res.status(409).send({ message: athlete.name + ' is already in the database.' });
+              if (character) {
+                return res.status(409).send({ message: character.name + ' is already in the database.' });
               }
 
-              callback(err, athleteId);
+              callback(err, characterId);
             });
           } catch (e) {
             return res.status(400).send({ message: 'XML Parse Error' });
@@ -72,20 +89,20 @@ app.post('/api/athletes', function(req, res, next) {
         });
       });
     },
-    function(athleteId) {
-      var athleteInfoUrl = 'http://www.iwrp.net/?view=contestant&id_zawodnik=' + athleteId;
+    function(characterId) {
+      var characterInfoUrl = 'https://api.eveonline.com/eve/CharacterInfo.xml.aspx?characterID=' + characterId;
 
-      request.get({ url: athleteInfoUrl }, function(err, request, xml) {
+      request.get({ url: characterInfoUrl }, function(err, request, xml) {
         if (err) return next(err);
         parser.parseString(xml, function(err, parsedXml) {
           if (err) return res.send(err);
           try {
-            var name = parsedXml.eveapi.result[0].athleteName[0];
+            var name = parsedXml.eveapi.result[0].characterName[0];
             var race = parsedXml.eveapi.result[0].race[0];
             var bloodline = parsedXml.eveapi.result[0].bloodline[0];
 
-            var athlete = new Athlete({
-              athleteId: athleteId,
+            var character = new Character({
+              characterId: characterId,
               name: name,
               race: race,
               bloodline: bloodline,
@@ -93,17 +110,17 @@ app.post('/api/athletes', function(req, res, next) {
               random: [Math.random(), 0]
             });
 
-            athlete.save(function(err) {
+            character.save(function(err) {
               if (err) return next(err);
-              res.send({ message: athleteName + ' has been added successfully!' });
+              res.send({ message: characterName + ' has been added successfully!' });
             });
           } catch (e) {
-            res.status(404).send({ message: athleteName + ' is not a registered lifter.' });
+            res.status(404).send({ message: characterName + ' is not a registered lifter.' });
           }
         });
       });
     }
-  ]);
+  ]);*/
 });
 
 app.use(function(req, res) {
