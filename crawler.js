@@ -45,8 +45,8 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.post('/api/characters', function(req, res, next) {
   var gender = req.body.gender;
   var number = req.body.name;
-  //var athleteIdLookupUrl = 'http://www.iwrp.net/?view=contestant&id_zawodnik=' + number;
-  var athleteIdLookupUrl = 'http://olystats.com/individual_profile.php?AID=' + number;
+  var athleteIdLookupUrl = 'http://www.iwrp.net/?view=contestant&id_zawodnik=' + number;
+  //var athleteIdLookupUrl = 'http://olystats.com/individual_profile.php?AID=' + number;
 
 
   request.get(athleteIdLookupUrl, function(err, request, html) {
@@ -54,12 +54,11 @@ app.post('/api/characters', function(req, res, next) {
     
     var $ = cheerio.load(html);
     var name = $('.nazwa_pogrubiona').text();
-    var name2 = $('.ui header').text();
+    var gender = 
 
-    console.log($);
-    console.log(name2);
+    console.log(name);
 
-    /*var gender = 
+    /*
     var nationality =
     var federation = 
     var club = 
