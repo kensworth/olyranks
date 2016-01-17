@@ -45,13 +45,20 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.post('/api/characters', function(req, res, next) {
   var gender = req.body.gender;
   var number = req.body.name;
-  var athleteIdLookupUrl = 'http://www.iwrp.net/?view=contestant&id_zawodnik=' + number;
+  //var athleteIdLookupUrl = 'http://www.iwrp.net/?view=contestant&id_zawodnik=' + number;
+  var athleteIdLookupUrl = 'http://olystats.com/individual_profile.php?AID=' + number;
+
 
   request.get(athleteIdLookupUrl, function(err, request, html) {
     if (err) return next(err);
     
     var $ = cheerio.load(html);
     var name = $('.nazwa_pogrubiona').text();
+    var name2 = $('.ui header').text();
+
+    console.log($);
+    console.log(name2);
+
     /*var gender = 
     var nationality =
     var federation = 
@@ -59,21 +66,21 @@ app.post('/api/characters', function(req, res, next) {
     var birthdate = 
     var age = */
 
-    var athlete = new Athlete({
-      name: String,
-      gender: String,
-      nationality: String,
-      federation: String,
-      club: String,
-      birthdate: Number,
-      age: Number,
+    /*var athlete = new Athlete({
+      name: name,
+      gender: gender,
+      nationality: nationality,
+      federation: federation,
+      club: club,
+      birthdate: birthdate,
+      age: age,
       random: [Math.random(), 0]
     });
 
     athlete.save(function(err) {
       if (err) return next(err);
       res.send({ message: name + ' has been added successfully!' });
-    });
+    });*/
 
   });     
 });
