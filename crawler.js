@@ -54,7 +54,7 @@ app.post('/api/characters', function(req, res, next) {
     
     var $ = cheerio.load(html);
     var name = $('.nazwa_pogrubiona').text();
-    var gender = 
+    //var gender = 
 
     console.log(name);
 
