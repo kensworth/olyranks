@@ -8,8 +8,8 @@
   },
   "main": "server.js",
   "scripts": {
-    "start": "node crawler.js",
-    "watch": "nodemon crawler.js",
+    "start": "node server.js",
+    "watch": "nodemon server.js",
     "postinstall": "bower install && gulp build"
   },
   "babel": {
