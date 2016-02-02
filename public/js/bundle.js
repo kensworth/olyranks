@@ -702,7 +702,7 @@ var Character = function (_React$Component) {
           _react2.default.createElement(
             'h4',
             { className: 'lead' },
-            'Race: ',
+            'Nationality: ',
             _react2.default.createElement(
               'strong',
               null,
@@ -712,7 +712,7 @@ var Character = function (_React$Component) {
           _react2.default.createElement(
             'h4',
             { className: 'lead' },
-            'Bloodline: ',
+            'Club: ',
             _react2.default.createElement(
               'strong',
               null,

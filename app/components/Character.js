@@ -50,8 +50,8 @@ class Character extends React.Component {
         </div>
         <div className='profile-info clearfix'>
           <h2><strong>{this.state.name}</strong></h2>
-          <h4 className='lead'>Race: <strong>{this.state.race}</strong></h4>
-          <h4 className='lead'>Bloodline: <strong>{this.state.bloodline}</strong></h4>
+          <h4 className='lead'>Nationality: <strong>{this.state.race}</strong></h4>
+          <h4 className='lead'>Club: <strong>{this.state.bloodline}</strong></h4>
           <h4 className='lead'>Gender: <strong>{this.state.gender}</strong></h4>
           <button className='btn btn-transparent'
                   onClick={CharacterActions.report.bind(this, this.state.characterId)}
